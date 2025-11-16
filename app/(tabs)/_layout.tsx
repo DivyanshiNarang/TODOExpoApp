@@ -1,19 +1,21 @@
+import useTheme from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
 
 const TabsLayout = () => {
+    const { colors } = useTheme();
+
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: 'green',
-                tabBarInactiveTintColor: 'red',
+                tabBarActiveTintColor: colors.primary,
+                tabBarInactiveTintColor: colors.textMuted,
                 tabBarStyle: {
-                    backgroundColor: '#1e293b',
+                    backgroundColor: colors.surface,
                     borderWidth: 1,
-                    borderTopColor: 'blue',
+                    borderTopColor: colors.border,
                     height: 90,
-                    paddingBottom: 4,
+                    paddingBottom: 2,
                     paddingTop: 5,
                 },
                 tabBarLabelStyle: {
@@ -46,6 +48,5 @@ const TabsLayout = () => {
     );
 }
 
-const styles = StyleSheet.create({})
 
 export default TabsLayout;
